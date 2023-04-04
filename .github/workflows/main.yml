@@ -14,7 +14,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build Application
-        run: ng build --configuration production --base-href "https://ymchan58.github.io/playwright-angular-demo/"
+        run: npm run build --prod
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

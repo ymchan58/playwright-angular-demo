@@ -10,21 +10,21 @@ test('has title', async ({ page }) => {
 test('search Bombasto', async ({ page }) => {
     await page.goto('https://ymchan58.github.io/playwright-angular-demo/dashboard');
 
-    const element = page.getByLabel('Hero Search');
-    await element.type('Bombasto', {delay: 100}); // Types slower, like a user
+    const searchBar = page.getByLabel('Hero Search');
+    await searchBar.type('Bombasto', {delay: 100}); // Types slower, like a user
 
-    // Expects the URL to contain intro.
+    // Expect the page to contain the success message
     await expect(page.getByTitle('messages-box')).toContainText('HeroService: found heroes matching "Bombasto"');
 });
 
-test('search invalid item', async ({ page }) => {
+test('click clear messages', async ({ page }) => {
   await page.goto('https://ymchan58.github.io/playwright-angular-demo/dashboard');
 
-  const element = page.getByLabel('Hero Search');
-  await element.type('Boombasto', {delay: 100}); // Types slower, like a user
+  const clearMessagesButton = page.getByRole('button', { name: 'Clear messages' })
+  await clearMessagesButton.click(); 
 
-  // Expects the URL to contain intro.
-  await expect(page.getByTitle('messages-box')).toContainText('HeroService: no heroes matching "Boombasto"');
+  // Expects the messages to be cleared (i.e. messages array length = 0)
+  await expect(page.getByTitle('messages-box')).toBeHidden();
 });
 
 

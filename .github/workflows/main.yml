@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build --prod
+        run: npm run build --configuration production --base-href "https://ymchan58.github.io/playwright-angular-demo/"
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v3

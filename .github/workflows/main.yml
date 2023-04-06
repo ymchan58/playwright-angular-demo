@@ -39,3 +39,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: .
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # - uses: actions/checkout@v2
+      # - name: Run Playwright Tests
+      #   run: npm run test:e2e
+
+  # include the playwright.yml file to define the "test" job
+  - name: Include Playwright Tests
+    include: playwright.yml

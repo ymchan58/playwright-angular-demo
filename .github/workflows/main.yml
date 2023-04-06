@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build --prod
+        run: ng build --configuration production
 
   deploy:
     runs-on: ubuntu-latest

@@ -48,6 +48,6 @@ jobs:
       # - name: Run Playwright Tests
       #   run: npm run test:e2e
 
-  # include the playwright.yml file to define the "test" job
-  - name: Include Playwright Tests
-    include: playwright.yml
+      # include the playwright.yml file to define the "test" job
+      - name: Include Playwright Tests
+        include: playwright.yml

@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: ng build --configuration production
+        run: npm run build --prod
 
   deploy:
     runs-on: ubuntu-latest
@@ -36,3 +36,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: dist
+          working-directory: .

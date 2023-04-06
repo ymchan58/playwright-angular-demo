@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         run: npm run build --prod
-        target-folder: dist
+        folder: dist
 
   deploy:
     runs-on: ubuntu-latest

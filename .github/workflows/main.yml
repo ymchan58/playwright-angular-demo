@@ -56,6 +56,9 @@ jobs:
       - name: List files in runner/work directory
         run: ls -a /home/runner/work/
 
+      - name: List files in runner/work/playwright-angular-demo/playwright-angular-demo directory
+        run: ls -a /home/runner/work/playwright-angular-demo/playwright-angular-demo
+
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

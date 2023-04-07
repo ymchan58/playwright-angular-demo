@@ -26,6 +26,9 @@ jobs:
       
       - name: List dist folder
         run: ls -R dist
+      
+      - name: List app folder
+        run: ls -R playwright-angular-demo
 
       - name: Print current working directory
         run: pwd

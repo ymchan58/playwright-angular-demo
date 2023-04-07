@@ -26,9 +26,6 @@ jobs:
       
       - name: List dist folder
         run: ls -R dist
-      
-      - name: List app folder
-        run: ls -R playwright-angular-demo
 
       - name: Print current working directory
         run: pwd
@@ -55,6 +52,10 @@ jobs:
       #   uses: actions/download-artifact@v1
       #   with:
       #     name: deploy_dist
+
+      - name: List files in runner/work directory
+        run: ls -a /home/runner/work/
+
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
